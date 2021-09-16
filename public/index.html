@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Daily songs / Disco </title>
+    <title>Search Party Song Finder</title>
   </head>
   <body>
-    <h1>Search Party Song Finder!</h1>
-    <input id='ganre' />
+    <h1>Find Recommendations Based on Your Favorite Songs</h1>
+    <input id='genre' />
     <button id="fetch-songs">Fetch Songs</button>
     <p id="response-output">Response Placeholder</p>
 
@@ -27,8 +27,8 @@
 
         fetchBtn.addEventListener('click', async () => {
           console.log('we are clicking on this button!');
-          const userGanre = document.getElementById('ganre').value;
-          const songResponse = await axios.get(`/.netlify/functions/get-songs/${userGanre}`);
+          const userGenre = document.getElementById('genre').value;
+          const songResponse = await axios.get(`/.netlify/functions/get-songs/${userGenre}`);
           const song = songResponse.data;
           console.log('we got these songs: ',songResponse );
           buldTracks(song);
