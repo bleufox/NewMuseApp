@@ -1,9 +1,9 @@
 const axios = require("axios").default;
 const getFmSimilarUrl = ({artist, track}) => `http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=${artist}&track=${track}&api_key=b9bdcb708a805b6ce1222f2c88ff7ea7&format=json`
-const getOptions = (ganre) =>  ({
+const getOptions = (genre) =>  ({
   method: 'GET',
   url: 'https://shazam.p.rapidapi.com/search',
-  params: {term: ganre, locale: 'en-US', offset: '0', limit: '20'},
+  params: {term: genre, locale: 'en-US', offset: '0', limit: '20'},
   headers: {
     'x-rapidapi-host': 'shazam.p.rapidapi.com',
     'x-rapidapi-key': '978ff0b408msh18526c0de87c0ebp17a04ajsn7b0e01b7abbe'
@@ -15,8 +15,8 @@ function getRandomInt(max) {
 }
 
 exports.handler = async (event) => {
-  const userGanre = event.path.split('/').pop();
-  const {data} = await axios.request(getOptions(userGanre)).catch(console.error);
+  const userGenre = event.path.split('/').pop();
+  const {data} = await axios.request(getOptions(userGenre)).catch(console.error);
   const matches = data.tracks.hits.map(({track}) => {
     return {track: track.title.split(' ').join(''), artist: track.subtitle.split(' ').join('')}
   })
