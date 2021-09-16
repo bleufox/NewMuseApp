@@ -4,22 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jamstack Explorers - Up and Running with Serverless Functions</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Daily songs / Disco </title>
   </head>
   <body>
-    <h1>Up and Running with Serverless Functions</h1>
-    <button id="fetch-btn">Fetch</button>
+    <h1>Get daily songs by Ganre!</h1>
+    <input id='ganre' />
+    <button id="fetch-songs">Fetch Songs</button>
     <p id="response-output">Response Placeholder</p>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const fetchBtn = document.getElementById('fetch-btn')
-        const responseText = document.getElementById('response-output')
 
-        fetchBtn.addEventListener('click', () => {
-          responseText.innerText = 'Static Text Replacement'
+        function buldTracks(song){
+          const h2El = document.createElement('h2');
+          const responseOutput = document.getElementById('response-output')
+          responseOutput.innerHTML = '';
+          h2El.textContent = song;
+          responseOutput.append(h2El);
+        }
+        
+        const fetchBtn = document.getElementById('fetch-songs')
+
+        fetchBtn.addEventListener('click', async () => {
+          console.log('we are clicking on this button!');
+          const userGanre = document.getElementById('ganre').value;
+          const songResponse = await axios.get(`/.netlify/functions/get-songs/${userGanre}`);
+          const song = songResponse.data;
+          console.log('we got these songs: ',songResponse );
+          buldTracks(song);
         })
-      })
     </script>
   </body>
 </html>
