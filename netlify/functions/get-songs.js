@@ -29,6 +29,6 @@ exports.handler = async (event) => {
   const randomTrack = tracks[randomInt]
   return {
     statusCode: 200,
-    body: `${randomTrack.name} - ${randomTrack.artist.name}`
+    body: `${randomTrack.name}-${randomTrack.artist.name}`
   }
 }
