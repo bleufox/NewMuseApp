@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Search Party Song Finder</title>
   </head>
   <body>
     <h1>Find Recommendations Based on Your Favorite Songs</h1>
     <input id='genre' />
     <button id="fetch-songs">Fetch Songs</button>
-    <p id="response-output">Response Placeholder</p>
+    <p class="results-card" id="response-output">Test</p>
 
     <script>
 
-        function buldTracks(song){
+        function buildTracks(song){
           const h2El = document.createElement('h2');
           const responseOutput = document.getElementById('response-output')
           responseOutput.innerHTML = '';
@@ -31,7 +32,7 @@
           const songResponse = await axios.get(`/.netlify/functions/get-songs/${userGenre}`);
           const song = songResponse.data;
           console.log('we got these songs: ',songResponse );
-          buldTracks(song);
+          buildTracks(song);
         })
     </script>
   </body>
