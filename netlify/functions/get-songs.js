@@ -14,6 +14,9 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+const getIds = ({data}) => data.items.map(({id}) => id.videoId);
+const getYoutubeIds = (queryString) => axios(`https://www.googleapis.com/youtube/v3/search/?key=AIzaSyCABvhcklfjrj-v5KaA5ype6JtWiCWGy8s&q=${queryString}`).then(getIds);
+
 exports.handler = async (event) => {
   const userGenre = event.path.split('/').pop();
   const {data} = await axios.request(getOptions(userGenre)).catch(console.error);
@@ -27,8 +30,10 @@ exports.handler = async (event) => {
   const tracks = fmRecs.similartracks.track;
   const randomInt = getRandomInt(tracks.length -1);
   const randomTrack = tracks[randomInt]
+  const songName = `${randomTrack.name}-${randomTrack.artist.name}`;
+  const ids = await getYoutubeIds(songName);
   return {
     statusCode: 200,
-    body: `${randomTrack.name}-${randomTrack.artist.name}`
+    body: ids[0]
   }
 }

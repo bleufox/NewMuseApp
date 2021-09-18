@@ -1,0 +1,140 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #47798C;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CF9572;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+h4 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
+p{
+  font-size: 11pt;
+}
+
+form {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1519677584237-752f8853252e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80') top center;
+  background-size: cover;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  padding-top: 80px;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #124265;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero h2 {
+  color: #5e5e5e;
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+
+#hero .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 14px 50px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #333333;
+  background: #F0E3D7;
+}
+
+#hero .btn-get-started:hover {
+  background: #D2AC89;
+}
+
+#hero .icon-boxes {
+  margin-top: 100px;  
+}
+
+#hero .icon-box {
+  padding: 15px 15px;
+  position: relative;
+  overflow: hidden;
+  background: #47798C;
+  background: linear-gradient(0deg,  rgba(51, 51, 51, 1) 0%, rgba(240, 227, 215, 1) 100%);
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  z-index: 1;
+  border: 1px solid #333333;
+  opacity: .85;
+}
+
+#hero .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#hero .icon-box .title a {
+  color: #333333;
+  transition: 0.3s;
+}
+
+#hero .icon-box .description {
+  font-size: 15px;
+  line-height: 17px;
+  margin-bottom: 0;
+}
+
+#hero .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 36px;
+  line-height: 1;
+  color: #47798C;
+}
+
+#hero .icon-box:hover {
+  transform: scale(1.08);
+}
+
+#hero .icon-box:hover .title a {
+  color: #333333;
+}

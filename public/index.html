@@ -2,43 +2,49 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <title>Search Party Song Finder</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>New Muse Song Finder</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/headphones.png" />
+
+    <!-- CSS Files -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
-  <h1>Find Recommendations Based on Your Favorite Songs</h1>
-  <input id='genre' placeholder="Hey Jude, YMCA, etc." />
-  <button class="fetch-btn" id="fetch-songs">Fetch Songs</button>
+
+    <!-- ======= HEADER ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row justify-content-center">
+                <meta width=device-width, initial-scale=1.0>
+                <div class="col-xl-7 col-lg-9 text-center">
+                    <img src="/assets/images/acid-header.png" alt="new-muse-text"
+                        style="width: 85%; padding-bottom: 50px;">
+                </div>
+            </div>
+
+            <form class="search-area" id="searchForm">
+                <input class='form-control' id='genre' placeholder="Hey Jude, YMCA, etc." />
+                <button class="fetch-btn" id="fetch-songs">Fetch Songs</button>
+
+            </form>
+            <div class="results-card" id="response-output">Test</div>
+    </section>
+
+    <script src='/assets/script.js'></script>
 
 
-  <p class="results-card" id="response-output">Test</p>
 
-  <script>
-
-    function buildTracks(song) {
-      const h2El = document.createElement('h2');
-      const responseOutput = document.getElementById('response-output')
-      responseOutput.innerHTML = '';
-      h2El.textContent = song;
-      responseOutput.append(h2El);
-    }
-
-    const fetchBtn = document.getElementById('fetch-songs')
-
-    fetchBtn.addEventListener('click', async () => {
-      console.log('we are clicking on this button!');
-      const userGenre = document.getElementById('genre').value;
-      const songResponse = await axios.get(`/.netlify/functions/get-songs/${userGenre}`);
-      const song = songResponse.data;
-      console.log('we got these songs: ', songResponse);
-      buildTracks(song);
-    })
-  </script>
 </body>
 
 </html>
