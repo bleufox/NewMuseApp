@@ -7,10 +7,10 @@
     <title>New Muse Song Finder</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/assets/images/headphones.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/headphones.png" />
 
     <!-- CSS Files -->
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -28,17 +28,18 @@
             <div class="row justify-content-center">
                 <meta width=device-width, initial-scale=1.0>
                 <div class="col-xl-7 col-lg-9 text-center">
-                    <img src="/assets/images/acid-header.png" alt="new-muse-text"
+                    <img src="./assets/images/acid-header.png" alt="new-muse-text"
                         style="width: 85%; padding-bottom: 50px;">
                 </div>
             </div>
 
             <form class="search-area" id="searchForm">
                 <input class='form-control' id='genre' placeholder="Hey Jude, YMCA, etc." />
-                <button class="fetch-btn" id="fetch-songs">Fetch Songs</button>
-
+                <button class="fetch-btn" id="fetch-songs">Find New Music</button>
             </form>
-            <div class="results-card" id="response-output">Test</div>
+
+            <div class="results-card" id="response-output"></div>
+
     </section>
 
     <script src='/assets/script.js'></script>

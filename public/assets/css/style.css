@@ -13,21 +13,19 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-}
-
-h4 {
-  font-family: "Raleway", sans-serif;
-  text-align: center;
-}
-
 p{
   font-size: 11pt;
 }
 
 form {
   display: block;
+}
+
+button {
+  width: 100%;
+  background-color: #444444;
+  color: #ffffff;
+  border: none;
 }
 
 /*--------------------------------------------------------------
