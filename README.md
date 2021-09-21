@@ -3,9 +3,6 @@
 ## Overview
 Search for a song or artist and a randomized song recommendation and accompanying YouTube video will appear.
 
-## Technologies Used
-HTML, CSS, JavaScript
-
 ## Screenshots
 Homepage 
 ![Home-Page](public/assets/images/homescreen.png)
@@ -13,7 +10,14 @@ Homepage
 Search Results
 ![Search Results](public/assets/images/search-results.png)
 
-## Link
-* Portfolio: https://bleufox.github.io/BleuFoxPortfolio/
+## Technologies Used
+* Javascript, HTML, CSS
+
+## Repository
+* GitHub Repo: https://github.com/bleufox/NewMuseApp
+* Netlify: https://newmuseapplication.netlify.app
+
+## Creator
+Ashley Jones, Full Stack Developer Student
+* Email: thebleufox8@gmail.com
 * GitHub: https://github.com/bleufox
-* LinkedIn: https://www.linkedin.com/in/bleufox/
